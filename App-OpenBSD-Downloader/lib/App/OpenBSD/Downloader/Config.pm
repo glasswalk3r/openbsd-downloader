@@ -4,6 +4,8 @@ use strict;
 use warnings;
 use Carp qw(confess);
 
+# VERSION
+
 sub new {
     my ( $class, $params_ref ) = @_;
     my $self = {
@@ -122,4 +124,3 @@ sub image_url {
 }
 
 1;
-
