@@ -3,6 +3,7 @@ package App::OpenBSD::Downloader::Config;
 use strict;
 use warnings;
 use Carp qw(confess);
+use Hash::Util qw(lock_keys);
 
 # VERSION
 
@@ -27,7 +28,7 @@ sub new {
         $self->{image_extension} = 'iso';
     }
 
-    return $self;
+    return lock_keys(%{$self});
 }
 
 sub _validate_params {
@@ -124,3 +125,6 @@ sub image_url {
 }
 
 1;
+
+# -*- mode: perl -*-
+# vi: set ft=perl :
